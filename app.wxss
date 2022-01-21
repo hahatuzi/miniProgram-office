@@ -1,0 +1,27 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 200rpx 0; */
+  background-color: #F5EEEE;
+  box-sizing: border-box;
+} 
+page {
+  --theme-color: #07c160;
+  --font-size-a:32rpx;
+  --font-size-b:28rpx; 
+  --color-a: #000;
+  --color-b: #969799;
+  --shadow-color: #ebebeb;
+  --calendar-selected-day-size: 96rpx;
+  --tabs-default-color:var(--theme-color);
+  --tabs-bottom-bar-color: var(--theme-color);
+  --tab-active-text-color:var(--theme-color);
+  --tab-font-size:var(--font-size-a);
+  --button-primary-background-color:var(--theme-color);
+  --button-primary-border-color: var(--theme-color);
+  --calendar-popup-height:40%;
+}

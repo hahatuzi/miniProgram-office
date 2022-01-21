@@ -1,0 +1,47 @@
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+ }
+ 
+ .navbar-box {
+  height: 88rpx;
+  line-height: 88rpx;
+  position: fixed;
+  top: 0rpx;
+  background: #fff;
+  display: flex;
+  font-size: var(--font-size-a);
+ }
+ 
+ .nav-item {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  background-color: #fff;
+ }
+ 
+ .nav-item text {
+  padding-bottom: 10rpx;
+ }
+ 
+ .active {
+  color: var(--theme-color);
+  border-bottom: 4rpx solid var(--theme-color);
+  box-sizing: border-box;
+ }
+ .tab-box{
+   margin-top: 88rpx;
+   background-color: #fff;
+   height: calc(100vh - 88rpx);
+   /* 88+ 96*/
+   /* height: calc(100vh - 184rpx);
+   overflow: scroll; */
+ }
+ .thing_container{
+   margin-bottom: 106rpx;
+ }
+ .tab-cnetent{
+   height: 100%;
+   overflow-y: scroll;
+ }

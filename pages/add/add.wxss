@@ -1,0 +1,7 @@
+/* pages/add/add.wxss */
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: top;
+  margin-right: 15rpx;
+}

@@ -1,0 +1,17 @@
+<scroll-view scroll-x="true" class="navbar-box">
+  <block wx:for="{{recordMain}}" wx:for-item="navItem" wx:key="index">
+    <view class="nav-item" data-current="{{index}}" bindtap="switchNav">
+      <text class="{{currentTab == index ? 'active' : ''}}">{{navItem.title}}</text>
+    </view>
+  </block>
+</scroll-view>
+
+<swiper class="tab-box" current="{{currentTab}}" duration="150" data-current="{{idx}}" bindchange="switchTab">
+  <swiper-item wx:for="{{[0,1,2,3]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-cnetent">
+  <view class="thing_container" wx:if="{{currentTab === 0}}">
+    <things ></things>
+  </view>
+    <location wx:if="{{currentTab === 1}}" curtime="{{curtime}}" class="location_comp"></location>
+    <takeoff wx:if="{{currentTab === 2}}"></takeoff>
+  </swiper-item>
+</swiper>

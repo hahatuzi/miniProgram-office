@@ -1,0 +1,91 @@
+.date{
+  margin: 20rpx 32rpx 0;
+  font-size: var(--font-size-b);
+}
+.date_title{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.date_more{
+  float: right;
+  width: 50rpx;
+  height: 50rpx;
+}
+.day{
+  display: flex;
+  margin-top: 15rpx;
+  justify-content: space-between;
+}
+.day_item{
+  text-align: center;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  border: 1px solid var(--shadow-color);
+}
+.today{
+  border: 1px solid var(--theme-color);
+  color: #fff;
+  background-color: var(--theme-color);
+}
+.message_box{
+  margin: 25rpx 32rpx;
+  padding: 20rpx 0;
+  box-shadow: 0 0 10rpx var(--shadow-color);
+  font-size: var(--font-size-b);
+  color: var(--color-b);
+}
+.flex_box{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px 12px;
+}
+.flex_box:last-child{
+  line-height: 70rpx;
+  margin-bottom: 0;
+  padding-top: 5px;
+}
+.title{
+  color: #000;
+  font-weight: 500;
+}
+.header{
+  width: 30px;
+  height: 30px;
+  vertical-align: top;
+  border-radius: 50%;
+}
+.status{
+  position: relative;
+}
+
+.status::before{
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+.done{
+  color: var(--theme-color);
+}
+.done::before{
+  background-color: var(--theme-color);
+}
+.name{
+  border-top: 1px solid #ebebeb;
+}
+.button_class{
+  width: 80rpx!important;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  padding: 0 !important;
+  margin-left: 8rpx!important;
+}

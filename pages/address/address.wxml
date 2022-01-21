@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <van-search value="{{ value }}" shape="round" placeholder="搜索" background="#fff" class="search"/>
+  <van-collapse value="{{ activeNames }}" bind:change="changeCollapse" class="search">
+    <van-collapse-item wx:for="{{addressData}}" wx:key="index" title="{{item.department}}" name="{{item.department}}">
+      <view wx:for="{{item.member}}" wx:key="key" class="content_container">
+        <image src="{{item.profile}}" class="header_pic"></image>
+        <text class="name">{{item.name}}</text>
+        <view>
+          <view>
+            <van-icon name="phone-o" style="vertical-align:top" size="35rpx"/>
+            <text class="info">短号：{{item.comment}}</text>
+          </view>
+          <view>
+            <van-icon name="envelop-o" style="vertical-align:middle" size="30rpx"/>
+            <text class="info">邮箱::{{item.email}}</text>
+          </view>
+        </view>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+</view>

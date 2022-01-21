@@ -1,0 +1,17 @@
+<van-cell-group inset>
+  <van-cell title="员工：" value="{{staff.name}}" />
+  <van-cell title="考勤规则：" value="{{staff.rules}}" />
+  <van-cell title="日期：" value="{{staff.date}}" />
+</van-cell-group>
+<view class="['circle',{{inside ?'inside_circle': 'outside_circle'}}]">
+  <view class="circle_title">{{inside ? '上班打卡':'未在考勤范围内'}}</view>
+  <view class="circle_time">{{curtime}}</view>
+  <view class="cover" wx:if="{{inside}}"></view>
+</view>
+<view class="promt">
+  <view>
+    {{inside ? '您已进入考勤范围：':'当前位置不在考勤范围内'}}
+    <text wx:if="{{inside}}" class="promt_position">{{staff.point}}</text>
+  </view>
+  <van-button icon="location-o" type="primary" bind:click="handlePosition" custom-class="promt_btn">点击重新定位</van-button>
+</view>

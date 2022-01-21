@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "password-eye":"/components/passwordEye/passwordEye"
+  }
+}

@@ -1,0 +1,64 @@
+<van-search
+  value="{{ person }}"
+  shape="round"
+  background="#fff"
+  placeholder="请输入员工姓名"
+  use-action-slot
+  bind:change="changeValue"
+  bind:search="choosePeople"
+>
+  <view slot="action" bind:tap="choosePeople">搜索</view>
+</van-search>
+<van-cell
+  wx:for="{{options}}"
+  wx:key="index"
+  value="{{item.value}}"
+  is-link
+  bind:click="handleClick"
+  data-item="{{item}}"
+  data-index="{{index}}"
+  use-label-slot="{{showpeople && item.type === 'people'}}"
+  arrow-direction="{{(showpeople && item.type === 'people')?'down': ''}}"
+>
+  <view slot="title">
+    <view class="van-cell-text">{{item.label}}</view>
+  </view>
+  <block wx:if="{{item.type === 'people'}}">
+    <view slot="label">
+      <van-tag custom-class="people" closeable  wx:for="{{namelist}}" wx:key="index" size="medium" type="success" id="primary"  bind:close="canclePeople" data-people="{{item}}">
+        {{item}}
+      </van-tag>
+    </view>
+  </block>
+</van-cell>
+
+<!-- <van-cell value="内容" is-link use-label-slot="{{showTest}}" bind:click="test" arrow-direction="{{showTest?'down': ''}}">
+  <view slot="title">
+    <view class="van-cell-text">外出人员名单</view>
+  </view>
+  <view slot="label">
+    <van-tag custom-class="people" closeable  wx:for="{{namelist}}" wx:key="index" size="medium"  type="primary" id="primary"  bind:close="canclePeople" data-people="{{item}}">
+    {{item}}
+  </van-tag>
+  </view>
+</van-cell>
+<van-cell value="内容" is-link bind:click="showPopup">
+  <view slot="title">
+    <view class="van-cell-text">外出日期选择</view>
+  </view>
+</van-cell>
+<van-cell value="内容" is-link bind:click="showPopup">
+  <view slot="title">
+    <view class="van-cell-text">外出时间选择</view>
+  </view>
+</van-cell>
+<van-cell value="{{destinationInfo.name}}" is-link bind:click="choosePosition">
+  <view slot="title">
+    <view class="van-cell-text">外出单位选择</view>
+  </view>
+</van-cell>
+<van-cell title="外出单位地址" value="内容" /> -->
+<van-calendar show="{{ showdate }}" bind:close="closePopup" data-type="{{'showdate'}}" bind:confirm="onConfirm" show-title="{{false}}"/>
+<van-popup show="{{ showtime }}" round position="bottom" custom-style="height: 25%" bind:close="closePopup"  data-type="{{'showtime'}}" >
+  <van-picker show-toolbar title="选择外出当天时间段" columns="{{ columns }}" default-index="{{ 0 }}" bind:change="onConfirm" data-type="{{'showtime'}}" bind:cancel="closePopup" bind:confirm="onConfirm"/>
+</van-popup>

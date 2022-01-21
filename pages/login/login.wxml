@@ -1,0 +1,38 @@
+<view class="login_container">
+  <view class="title">欢迎登录城地OA办公室</view>
+  <text class="describe">解决员工沟通，文件管理</text>
+  <view class="form">
+    <text>手机号码</text>
+    <view  class="input">
+      <input type="text" placeholder="请输入手机号码" maxlength="11" value="{{form.phone}}" bindblur="handleForm" data-item="phone"/>
+    </view>
+    <view class="password_txt">密码</view>
+    <view class="input">
+      <input  type="text" placeholder="请输入密码" password="{{close}}" value="{{form.password}}" bindblur="handleForm" data-item="password"/>
+      <view class="password_icon">
+        <password-eye close="{{close}}" bind:changeEye="changeEye"></password-eye>
+      </view>
+    </view>
+  </view>
+  <van-toast id="van-toast" />
+  <!-- 获取手机号码 -->
+  <!-- <button type="primary" size="mini" class="login_btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信用户一键登录</button> -->
+  <button type="primary" class="login_btn" bind:tap="login">微信用户一键登录</button>
+  <!-- <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> -->
+</view>

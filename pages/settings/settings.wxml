@@ -1,0 +1,36 @@
+<block  wx:if="{{settingType === '1'}}">
+  <view  wx:for="{{info}}" wx:key="index" class="info_item">
+    <!-- <view class="info_item"> -->
+      <text class="left">{{item.label}}</text>
+      <view class="right">
+        <van-field wx:if="{{item.type !== 'image'}}" model:value="{{ item.value }}"/>
+        <image src="{{img}}"  wx:else="" bindtap="imagePopup"></image>
+      </view>
+    <!-- </view> -->
+  </view>
+
+  <view class="btn_container">
+    <van-button type="primary" bind:click="save" custom-class="save_btn">保存</van-button>
+  </view>
+</block>
+<block  wx:if="{{settingType === '2'}}">
+    <van-field label="新密码" model:value="{{ password }}" placeholder="请输入新密码" password="{{eye1}}">
+    <view slot="right-icon">
+      <password-eye close="{{eye1}}"  eye_type="eye1" bind:changeEye="changeEye"></password-eye>
+    </view>
+    </van-field>
+    <van-field label="确认密码" model:value="{{ confirm_password }}" placeholder="请再次输入新密码" password="{{eye2}}">
+      <view slot="right-icon">
+        <password-eye close="{{eye2}}" bind:changeEye="changeEye"  eye_type="eye2"></password-eye>
+      </view>
+    </van-field>
+  <view class="btn_container">
+    <van-button type="primary" bind:click="savePassword" custom-class="save_btn">保存密码</van-button>
+  </view>
+</block>
+<van-toast id="van-toast" />
+<!-- <van-popup show="{{ alterImage }}" round position="bottom" custom-style="height: 150rpx" bind:close="imagePopup">
+  <view class="image_btn" bindtap="handleImage" data-type="1">头像修改</view>
+  <view class="image_btn" bindtap="handleImage" data-type="2">头像预览</view>
+</van-popup> -->
+

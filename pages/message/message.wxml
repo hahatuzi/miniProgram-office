@@ -1,0 +1,23 @@
+<van-tabs active="{{ active }}" bind:change="onChange" type="card" sticky>
+  <van-tab wx:for="{{messageList}}" wx:key="index" title="{{item.messageType}}">
+    <!-- <view class="message_box" wx:for="{{item.data}}" wx:key="{{index}}">
+      <view class="flex_box">
+        <text>{{item.type}}</text>
+        <text class="status">{{item.status}}</text>
+      </view>
+      <view class="flex_box">
+        <text>{{item.time}}</text>
+      </view>
+      <view class="flex_box name">
+        <view>
+        <image src="{{item.header_pic}}"></image>
+        {{item.name}}
+        </view>
+        <text>{{item.date}}</text>
+      </view>
+    </view> -->
+    <view class="message_container">
+      <things></things>
+    </view>
+  </van-tab>
+</van-tabs>

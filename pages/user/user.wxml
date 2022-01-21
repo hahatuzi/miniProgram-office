@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="info_container">
+  <view class="info_header">
+    <view  class="header_pic">
+      <view class="sex">
+      <image src="{{sex === 'male' ? '/images/male.png' : '/images/female.png'}}"></image>
+      </view>
+      <image src="/images/header.png" bindtap="handleImage"></image>
+    </view>
+    <text class="header_txt">王春晖</text>
+    <van-icon class="header_edit" name="edit" color="#fff"  bind:tap="handleSetting" data-type="1"/>
+  </view>
+  <view class="info_body">
+    <ul>
+      <li wx:for="{{info}}" wx:key="index">
+      <text>{{item.label}}</text><text>{{item.value}}</text></li>
+    </ul>
+    <view class="info_bottom">
+      <button class="bottom_btn"	hover-class="none" bind:tap="handleSetting"  data-type="2">修改密码</button>
+      <button	class="bottom_btn" hover-class="none" bind:tap="showLogOut">退出登录</button>
+    </view>
+    <van-dialog id="van-dialog"/>
+  </view>
+</view>
+
+

@@ -1,0 +1,13 @@
+.people{
+  margin: 0 7rpx;
+  font-size: 30rpx;
+}
+.name_list{
+  /* margin: 15rpx; */
+  padding: 10rpx;
+  border-radius: 16rpx;
+  background-color: #f6f6f6;
+}
+.van-tag--medium{
+  padding: 12rpx!important;
+}

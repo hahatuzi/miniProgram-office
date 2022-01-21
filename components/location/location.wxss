@@ -1,0 +1,57 @@
+.circle{
+  width: 300rpx;
+  height: 300rpx;
+  text-align: center;
+  margin: 100rpx auto;
+  border-radius: 50%;
+  color: #fff;
+}
+.inside_circle{
+  background-color: var(--theme-color);
+  position: relative;
+}
+.cover{
+  width: 450rpx;
+  height: 450rpx;
+  border-radius: 50%;
+  background-color: var(--theme-color);
+  opacity: 0.1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  animation: zoom 1.8s infinite ease-in-out;
+}
+@keyframes zoom {
+  0%{
+    width: 320rpx;
+    height: 320rpx;
+    opacity: 0.25;
+  }
+  100%{
+    width:450rpx;
+    height: 450rpx;
+    box-shadow:0px 0px 20rpx #82e7b3;
+  }
+}
+.outside_circle{
+  background-color: #b4b4b4;
+}
+
+.circle_title{
+  line-height: 50rpx;
+  padding-top: 125rpx;
+  font-size: 42rpx;
+  margin-bottom: 5rpx;
+}
+.promt{
+  font-size: 28rpx;
+  margin: 0 30rpx;
+  text-align: center;
+}
+.promt_position{
+  color: var(--theme-color);
+}
+.promt_btn{
+  margin-top: 10rpx;
+}

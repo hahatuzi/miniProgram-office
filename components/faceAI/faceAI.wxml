@@ -1,0 +1,3 @@
+<!--components/faceAI/faceAI.wxml-->
+<!-- <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera> -->
+<van-button type="primary" bind:tap="takePhoto">点击进行人脸识别</van-button>

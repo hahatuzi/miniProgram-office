@@ -1,0 +1,47 @@
+<van-cell-group inset class="cell">
+  <van-cell
+    wx:for="{{leaveInfo}}"
+    wx:key="index"
+    title="{{item.title}}"
+    is-link
+    bind:tap="showPopup"
+    data-popType="{{item.type}}"
+    value="{{item.value}}"
+  />
+  <van-cell title="共时长" value="{{total_time}}" />
+</van-cell-group>
+<van-cell-group inset  class="cell">
+  <van-cell title="假期余量"/>
+  <van-cell title="法定年休假" value="5天" />
+  <van-cell title="补充年休假" value="3天" />
+  <van-cell title="调休假" value="1天" />
+</van-cell-group>
+<view class="btn_container">
+<van-button type="primary" bind:click="handleLeave" custom-class="leave_btn">提交</van-button>
+</view>
+<van-toast id="van-toast" />
+<van-action-sheet
+  show="{{ show && (popType === 'leave_type') }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="handleConfirm"
+  z-index="10000"
+/>
+<van-popup
+  show="{{ show && (popType === 'start_time' || popType === 'end_time') }}"
+  position="bottom"
+  custom-style="height: 40%;"
+  bind:close="onClose"
+  z-index="10000"
+>
+  <van-datetime-picker
+    type="datetime"
+    value="{{ currentDate }}"
+    filter="{{ filter }}"
+    min-date="{{ minDate }}" 
+    max-date="{{ maxDate }}"
+    bind:input="handleConfirm"
+    bind:cancel="onClose"
+    bind:confirm="handleConfirm"
+  />
+</van-popup>

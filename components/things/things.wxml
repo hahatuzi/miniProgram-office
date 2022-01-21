@@ -1,0 +1,54 @@
+<view class="date" wx:if="{{currentTab === 0 }}">
+  <view class="date_title">
+    {{today}}
+    <image class="date_more" src="../../images/more.png" bindtap="showCalendar"></image>
+  </view>
+  <view class="day">
+    <view
+      wx:for="{{daysList}}"
+      wx:key="index"
+      class="['day_item',{{activeDay === index ? 'today': ''}}]"
+      bind:tap="changeActive"
+      data-index="{{index}}"
+    >
+    {{item}}
+    </view>
+  </view>
+</view>
+<view class="message_box" wx:for="{{thingsList}}" wx:key="index">
+  <view>
+    <view  class="flex_box">
+      <text class="title">{{item.type}}</text>
+      <text class="['status',{{item.status === '已完成'? 'done' : ''}}]">{{item.status}}</text>
+    </view>
+    <block wx:if="{{item.type === '请假'}}">
+      <view  class="flex_box">请假时间：{{item.time}}</view >
+      <view  class="flex_box">请假时长：{{item.total}}</view>
+    </block>
+    <block wx:if="{{item.type === '外出'}}">
+      <view  class="flex_box">外出地点：{{item.company}}</view >
+      <view  class="flex_box">外出人员：{{item.people}}</view>
+    </block>
+    <view class="flex_box name">
+      <view>
+        <image src="{{item.header_pic}}" class="header"></image>
+        {{item.name}}
+      </view>
+      <text>{{item.date}}</text>
+      <view wx:if="{{currentTab === 0 && item.status === '待处理'}}">
+        <van-button type="primary" custom-class="button_class" bind:tap="handleStatus" data-item="{{item}}"  data-type="agree">同意</van-button>
+        <van-button type="danger" custom-class="button_class" bind:tap="handleStatus"  data-item="{{item}}"  data-type="refuse">拒绝</van-button>
+      </view>
+    </view>
+  </view>
+<van-dialog id="van-dialog" />
+
+</view>
+<van-calendar
+show="{{ showCalendar }}"
+  bind:close="onClose"
+  bind:confirm="onConfirm"
+  show-confirm="{{ false }}"
+  row-height="48"
+  show-title="{{false}}"
+  />

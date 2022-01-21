@@ -1,0 +1,21 @@
+.search{
+  width: 100%;
+}
+.content_container{
+  display: flex;
+  align-items: center;
+  color: var(--color-a);
+  font-size: var(--font-size-b);
+  padding: 20rpx 0;
+}
+.header_pic{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.name{
+  margin:0 50rpx 0 25rpx;
+}
+.info{
+  margin-left: 20rpx;
+}

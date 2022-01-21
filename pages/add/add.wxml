@@ -1,0 +1,6 @@
+<van-cell wx:for="{{addInfo}}" wx:key="index" title="{{item.title}}" is-link url="{{item.url}}" bind:click="click" data-url="{{item.url}}">
+  <view slot="icon">
+    <image class="icon" src="{{item.icon}}"></image>
+  </view>
+</van-cell>
+<van-dialog id="van-dialog" />

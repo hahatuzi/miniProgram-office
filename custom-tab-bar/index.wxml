@@ -1,0 +1,12 @@
+<view class="tabbar_box" wx:if="{{showTab}}">
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="tabbar_nav" hover-class="none"   data-path="{{item.pagePath}}" data-index="{{index}}" bind:tap="switchTab">
+      <view wx:if="{{item.isSpecial}}" class='special-wrapper'>
+        <image class="tabbar_icon" src="{{item.selectedIconPath}}"></image>
+      </view>
+      <view wx:if="{{item.isSpecial}}" class="tabbar_icon"></view>
+      <image wx:if="{{!item.isSpecial}}" class="tabbar_icon" src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+      <text style="color:{{selected === index ? selectedColor : color}}">{{item.text}}</text>
+    </view>
+  </block>
+</view>

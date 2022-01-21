@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "things":"/components/things/things",
+    "location":"/components/location/location",
+    "faceAI":"/components/faceAI/faceAI",
+    "takeoff":"/components/takeoff/takeoff"
+
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "首页"
+}

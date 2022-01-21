@@ -1,0 +1,46 @@
+/* pages/setting/setting.wxss */
+.password_form{
+  margin: 40rpx;
+}
+.btn_container{
+  margin: 60rpx 20rpx 0;
+
+}
+.save_btn{
+  width: 100%;
+  margin-top: 40rpx;
+}
+.van-toast{
+  width: 250rpx!important;
+  text-align: center;
+}
+.info_item{
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 0 32rpx;
+  border-bottom: 1px solid #ebedf0;
+}
+.right{
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}
+.left{
+  width: 100rpx;
+}
+image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin:19rpx 0 0 32rpx;
+}
+.image_btn{
+  color: #4b4b4b;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border-bottom: 1px solid #efefef;
+}
+.van-cell:after{
+  border-bottom: none!important;
+}

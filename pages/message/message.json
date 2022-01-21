@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "things":"/components/things/things"
+  },
+  "navigationBarTitleText": "消息中心"
+}
