@@ -51,7 +51,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
+  "libVersion": "2.21.3",
   "appid": "wx88e972e0df22e83c",
   "projectname": "miniprogram-2",
   "debugOptions": {
